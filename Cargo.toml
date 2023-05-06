@@ -1,0 +1,24 @@
+[package]
+name = "ruler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes="1.4"
+axum = {version="0.6", features=["ws"]}
+axum-extra="0.7"
+futures = "0.3"
+tokio = {version="1", features=["full"]}
+tower = {version="0.4", features=["util"]}
+tower-http={version="0.4", features=["fs", "trace"]}
+tracing = "0.1"
+tracing-subscriber = {version="0.3", features=["env-filter"]}
+mime_guess="2"
+clap = { version = "4.1.12", features = ["derive"] }
+home = "0.5"
+
+[profile.release]
+lto = true
+codegen-units = 1
